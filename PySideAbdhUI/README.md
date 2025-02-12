@@ -1,4 +1,4 @@
-# PySideAbdhUI: Customized GUI base on PySide6 - Python 3.13.1
+# PySideAbdhUI: Customized GUI based on PySide6 - Python 3.13.1
 This package contains:
  * style_manage: manages qss files(Qt Style Sheets)
                  this supports accent color
