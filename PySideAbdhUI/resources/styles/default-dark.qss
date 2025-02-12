@@ -1,0 +1,349 @@
+/* Base background and text color */
+QWidget 
+{
+    background-color: #2d2d2d;
+    color: #ffffff;
+    font-family: "Segoe UI", sans-serif;
+    font-size: 14px;
+}
+
+/* Buttons */
+QPushButton {
+    background-color: #3a3a3a;
+    border: 1px solid #555555;
+    border-radius: 4px;
+    padding: 5px 10px;
+    color: #ffffff;
+}
+
+QPushButton:hover {
+    background-color: #4a4a4a;
+    border: 1px solid #666666;
+}
+
+QPushButton:pressed {
+    background-color: #2a2a2a;
+    border: 1px solid #444444;
+}
+
+QPushButton:disabled {
+    background-color: #2a2a2a;
+    border: 1px solid #444444;
+    color: #777777;
+}
+
+/* Line Edit */
+QLineEdit {
+    background-color: #3a3a3a;
+    border: 1px solid #555555;
+    border-radius: 4px;
+    padding: 5px;
+    color: #ffffff;
+    selection-background-color: #555555;
+    selection-color: #ffffff;
+}
+
+QLineEdit:focus {
+    border: 1px solid #777777;
+}
+
+QLineEdit:disabled {
+    background-color: #2a2a2a;
+    border: 1px solid #444444;
+    color: #777777;
+}
+
+/* Combo Box */
+QComboBox {
+    background-color: #3a3a3a;
+    border: 1px solid #555555;
+    border-radius: 4px;
+    padding: 5px;
+    color: #ffffff;
+}
+
+QComboBox:hover {
+    background-color: #4a4a4a;
+    border: 1px solid #666666;
+}
+
+QComboBox:disabled {
+    background-color: #2a2a2a;
+    border: 1px solid #444444;
+    color: #777777;
+}
+
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 20px;
+    border-left: 1px solid #555555;
+}
+
+QComboBox::down-arrow {
+    image: url(down_arrow.png); /* Replace with your arrow icon */
+}
+
+QComboBox QAbstractItemView {
+    background-color: #3a3a3a;
+    border: 1px solid #555555;
+    color: #ffffff;
+    selection-background-color: #555555;
+    selection-color: #ffffff;
+}
+
+/* Check Box */
+QCheckBox {
+    color: #ffffff;
+}
+
+QCheckBox::indicator {
+    width: 16px;
+    height: 16px;
+    border: 1px solid #555555;
+    border-radius: 3px;
+    background-color: #3a3a3a;
+}
+
+QCheckBox::indicator:checked {
+    background-color: #555555;
+    image: url(checked.png); /* Replace with your checkmark icon */
+}
+
+QCheckBox::indicator:disabled {
+    background-color: #2a2a2a;
+    border: 1px solid #444444;
+}
+
+/* Radio Button */
+QRadioButton {
+    color: #ffffff;
+}
+
+QRadioButton::indicator {
+    width: 16px;
+    height: 16px;
+    border: 1px solid #555555;
+    border-radius: 8px;
+    background-color: #3a3a3a;
+}
+
+QRadioButton::indicator:checked {
+    background-color: #555555;
+    border: 4px solid #3a3a3a;
+}
+
+QRadioButton::indicator:disabled {
+    background-color: #2a2a2a;
+    border: 1px solid #444444;
+}
+
+/* Slider */
+QSlider::groove:horizontal {
+    background-color: #3a3a3a;
+    height: 6px;
+    border-radius: 3px;
+}
+
+QSlider::handle:horizontal {
+    background-color: #555555;
+    width: 16px;
+    height: 16px;
+    margin: -5px 0;
+    border-radius: 8px;
+}
+
+QSlider::handle:horizontal:hover {
+    background-color: #666666;
+}
+
+QSlider::handle:horizontal:pressed {
+    background-color: #444444;
+}
+
+QSlider::groove:vertical {
+    background-color: #3a3a3a;
+    width: 6px;
+    border-radius: 3px;
+}
+
+QSlider::handle:vertical {
+    background-color: #555555;
+    width: 16px;
+    height: 16px;
+    margin: 0 -5px;
+    border-radius: 8px;
+}
+
+QSlider::handle:vertical:hover {
+    background-color: #666666;
+}
+
+QSlider::handle:vertical:pressed {
+    background-color: #444444;
+}
+
+/* Progress Bar */
+QProgressBar {
+    background-color: #3a3a3a;
+    border: 1px solid #555555;
+    border-radius: 4px;
+    text-align: center;
+    color: #ffffff;
+}
+
+QProgressBar::chunk {
+    background-color: #555555;
+    border-radius: 4px;
+}
+
+/* Scroll Bars */
+QScrollBar:horizontal {
+    background-color: #3a3a3a;
+    height: 12px;
+    margin: 0;
+}
+
+QScrollBar::handle:horizontal {
+    background-color: #555555;
+    min-width: 20px;
+    border-radius: 6px;
+}
+
+QScrollBar::add-line:horizontal,
+QScrollBar::sub-line:horizontal {
+    background: none;
+}
+
+QScrollBar:vertical {
+    background-color: #3a3a3a;
+    width: 12px;
+    margin: 0;
+}
+
+QScrollBar::handle:vertical {
+    background-color: #555555;
+    min-height: 20px;
+    border-radius: 6px;
+}
+
+QScrollBar::add-line:vertical,
+QScrollBar::sub-line:vertical {
+    background: none;
+}
+
+/* Tab Widget */
+QTabWidget::pane {
+    border: 1px solid #555555;
+    background-color: #3a3a3a;
+}
+
+QTabBar::tab {
+    background-color: #3a3a3a;
+    border: 1px solid #555555;
+    padding: 8px;
+    color: #ffffff;
+}
+
+QTabBar::tab:selected {
+    background-color: #555555;
+    border-bottom: 1px solid #555555;
+}
+
+QTabBar::tab:hover {
+    background-color: #4a4a4a;
+}
+
+/* Menu Bar */
+QMenuBar {
+    background-color: #3a3a3a;
+    color: #ffffff;
+}
+
+QMenuBar::item {
+    background-color: transparent;
+    padding: 5px 10px;
+}
+
+QMenuBar::item:selected {
+    background-color: #555555;
+}
+
+QMenu {
+    background-color: #3a3a3a;
+    border: 1px solid #555555;
+    color: #ffffff;
+}
+
+QMenu::item {
+    padding: 5px 20px;
+}
+
+QMenu::item:selected {
+    background-color: #555555;
+}
+
+/* Tool Tips */
+QToolTip {
+    background-color: #555555;
+    border: 1px solid #777777;
+    color: #ffffff;
+    padding: 5px;
+    border-radius: 4px;
+}
+
+/* Disabled State */
+QWidget:disabled {
+    color: #777777;
+}
+
+/* Calendar Widget */
+QCalendarWidget {
+    background-color: #3a3a3a;
+    border: 1px solid #555555;
+    color: #ffffff;
+}
+
+QCalendarWidget QToolButton {
+    background-color: #3a3a3a;
+    color: #ffffff;
+    font-size: 14px;
+    icon-size: 16px, 16px;
+}
+
+QCalendarWidget QToolButton:hover {
+    background-color: #4a4a4a;
+}
+
+QCalendarWidget QToolButton:pressed {
+    background-color: #2a2a2a;
+}
+
+QCalendarWidget QMenu {
+    background-color: #3a3a3a;
+    border: 1px solid #555555;
+    color: #ffffff;
+}
+
+QCalendarWidget QMenu::item {
+    padding: 5px 20px;
+}
+
+QCalendarWidget QMenu::item:selected {
+    background-color: #555555;
+}
+
+QCalendarWidget QWidget#qt_calendar_navigationbar {
+    background-color: #3a3a3a;
+}
+
+QCalendarWidget QAbstractItemView {
+    background-color: #3a3a3a;
+    color: #ffffff;
+    selection-background-color: #555555;
+    selection-color: #ffffff;
+}
+
+QCalendarWidget QAbstractItemView:disabled {
+    color: #777777;
+}
