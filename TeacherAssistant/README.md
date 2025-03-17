@@ -6,6 +6,8 @@ This project is currently in its early stages...
 
 [🔍 Version history](https://htmlpreview.github.io/?https://github.com/abdhmohammadi/Abdh/blob/main/version-history.html)
 
+[🔍 Project structure](https://htmlpreview.github.io/?https://github.com/abdhmohammadi/Abdh/blob/main/structure.txt)
+
 ## Features
 
 - 🎨 **Customizable UI**
@@ -55,70 +57,6 @@ pyinstaller pyinstaller/spec/TeacherAssistant.spec
 ```
 
 For Windows installer creation, use InnoSetup with the provided script.
-
-## Project Structure
-  
-```
-abdh/
-├── TeacherAssistant/  # Main application folder
-│   ├── __init__.py
-│   ├── main.py
-│   ├── utils/
-│   │   ├── __init__.py
-│   │   ├── database_tools.py
-│   │   ├── font_tools.py
-│   │   ├── helpers.py
-│   │   ├── image_tools.py
-│   │   └── ThemeManager.py
-│   ├── models/
-│   │   ├── __init__.py
-│   │   └── # all data layer models come here
-│   ├── view_models/
-│   │   ├── __init__.py
-│   │   └── # View Models(Intermediary between View and Model)
-│   ├── views/
-│   │   ├── __init__.py
-│   │   └──  # Views (UI Layer)
-│   └── resources/
-│       ├── fonts/
-│       │     ├── SegoeIcons.py
-│       │     └── SegoeIcons.ttf
-│       ├── icons/
-│       │     ├── book-coffe.png (application icon)
-│       │     ├── logo-coffe1.png
-│       │     └── logo-coffe2.png
-│       ├── images/
-│       │     └── background.png
-│       ├── styles/
-│       │     ├── chrome-semi-dark/
-│       │     │       ├── global.qss
-│       │     │       └── classes.qss
-│       │     └── light/
-│       │             ├── global.qss
-│       │             └── classes.qss
-│       └── templates/
-│             ├── 01-Quiz-config.json
-│             ├── 01-Quiz-Template.html
-│             ├── 02-Formal-Exam-config.json
-│             └── 02-Formal-Exam-Template.html
-├── PySideAbdhUI/   # Customized GUI
-│   ├── __init__.py
-│   ├── popup.py
-│   ├── style_sheets.py
-│   ├── TableWidget.py
-│   ├── Window.py
-│   └── styles/
-│       ├── default-dark.qss
-│       └── default-light.qss
-├── pyinstaller/                                  # PyInstaller
-│   ├── build/
-│   ├── dist/
-│   └── spec/
-│       └── TeacherAssistant.spec
-├── requirements.txt
-└── README.md
-
-```
 
 ## Dependencies
 
