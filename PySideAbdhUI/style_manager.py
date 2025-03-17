@@ -9,10 +9,8 @@ logger = logging.getLogger(__name__)
 
 class QtStyleSheetManager:
     
-    def __init__(self, qss_file: str, accent_color_template='@accent-color'):
+    def __init__(self, accent_color_template='@accent-color'):
         
-        # Initialize with the path to the QSS file.# 
-        self.qss_file = qss_file
         #string data type : stores style sheet loaded from a qss file
         #type annotation Optional[str] indicates that stylesheet can either be a string or None.
         # Initially, it is set to None.
@@ -20,6 +18,52 @@ class QtStyleSheetManager:
         # placeholder template for accent color, and is used when the qss file be included accent color
         self.accent_color_template = accent_color_template
     
+    def add_property_to_widget(self, widget_name: str, property_name: str, property_value: str):
+        """
+            Add or update a property for a specific widget in the stylesheet.
+
+        Args:
+            widget_name (str): The name of the widget (e.g., "QPushButton").
+            property_name (str): The name of the property (e.g., "font-family").
+            property_value (str): The value of the property (e.g., "'Arial'").
+        """
+        if self.stylesheet is None:
+            logger.warning("No stylesheet loaded.")
+            return
+
+        # Create the new property string
+        new_property = f"{property_name}: {property_value};"
+
+        # Check if the widget already has a stylesheet definition
+        widget_pattern = re.compile(rf'{widget_name}\s*{{[^}}]*}}')
+        match = widget_pattern.search(self.stylesheet)
+
+        if match:
+            # Extract the existing stylesheet block for the widget
+            widget_style = match.group(0)
+
+            # Check if the property already exists in the widget's stylesheet
+            property_pattern = re.compile(rf'{property_name}\s*:\s*[^;]+;')
+            property_match = property_pattern.search(widget_style)
+
+            if property_match:
+                # If the property exists, update its value
+                updated_style = widget_style.replace(property_match.group(0), new_property)
+                self.stylesheet = self.stylesheet.replace(widget_style, updated_style)
+                logger.info(f"Updated property '{property_name}' to '{property_value}' for widget '{widget_name}'.")
+            else:
+                # If the property does not exist, append it to the widget's stylesheet
+                updated_style = widget_style.rstrip('}') + f"\n    {new_property}\n}}"
+                self.stylesheet = self.stylesheet.replace(widget_style, updated_style)
+                logger.info(f"Added property '{property_name}: {property_value}' to widget '{widget_name}'.")
+        else:
+            # If the widget does not exist, create a new stylesheet definition
+            new_style = f"{widget_name} {{\n    {new_property}\n}}"
+            self.stylesheet += "\n" + new_style
+            logger.info(f"Created new stylesheet for widget '{widget_name}' with property '{property_name}: {property_value}'.")
+
+        self.save_stylesheet()
+
     def remove_stylesheet_by_name(self, name: str) -> str:
         #
         #Remove all stylesheets specified with a given name, including pseudo-states.
@@ -43,17 +87,17 @@ class QtStyleSheetManager:
     def add_stylesheet(self,stylesheet:str=None):
         self.stylesheet = self.stylesheet + '\n' + stylesheet
 
-    def load_stylesheet(self) -> str:
+    def load_stylesheet(self,qss_path:str) -> str:
         
+        self.qss_file = qss_path
+
         if os.path.exists(self.qss_file):
             with open(self.qss_file, "r", encoding="utf-8") as file:
-                stylesheet = file.read()
+                self.stylesheet = file.read()
                 file.close()
         else:
             logger.error(f"Failed to open stylesheet file: {self.qss_file}")
-    
-        self.stylesheet = stylesheet
-        
+            
     def check_accent_color_placeholder(self) -> tuple[bool, str]:
         # 
         # Check if the accent-color placeholder exists in the stylesheet.
@@ -218,7 +262,7 @@ QPushButton
     background-color:  transparent; 
     border: none; /* Bright blue border */ 
     border-radius: none; 
-    padding: 5px 20px;
+    padding: 5px 10px;
     text-align: left;
 }
 QPushButton:hover
