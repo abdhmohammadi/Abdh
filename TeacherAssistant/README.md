@@ -6,8 +6,6 @@ This project is currently in its early stages...
 
 [🔍 Version history](https://htmlpreview.github.io/?https://github.com/abdhmohammadi/Abdh/blob/main/version-history.html)
 
-[LinkedIn: abdhmohammadi](https://www.linkedin.com/in/abdh-mohammadi-47095a267/)
-
 ## Features
 
 - 🎨 **Customizable UI**
