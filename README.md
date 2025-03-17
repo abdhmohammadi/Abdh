@@ -4,7 +4,7 @@ A modern, user-friendly teacher assistance application built with PySide6 (Qt fo
 This application helps educational resources managment and student information with a beautiful, customizable interface.
 This project is currently in its early stages...
 
-[🌐 View Live Page]([https://abdhmohammadi.github.io/Abdh/version-history.html])
+[🔍 Preview HTML](https://htmlpreview.github.io/?https://github.com/abdhmohammadi/Abdh/blob/main/version-history.html)
 
 ## Features
 
