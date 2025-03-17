@@ -67,7 +67,7 @@ For Windows installer creation, use InnoSetup with the provided script.
 ## Configuration
 
 The application stores settings in the user's LOCALAPPDATA directory:
-- `%LOCALAPPDATA%/MyJobAssistant/settings.json`
+- `%LOCALAPPDATA%/Abdh/TeacherAssistant/settings.json`
 
 ## License
 
