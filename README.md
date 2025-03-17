@@ -1,4 +1,4 @@
-# Teacher Assistant
+# Teacher Assistant project
 
 A modern, user-friendly teacher assistance application built with PySide6 (Qt for Python).
 This application helps educational resources managment and student information with a beautiful, customizable interface.
