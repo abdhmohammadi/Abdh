@@ -1,6 +1,6 @@
 # ABDH (Academic Behavior Data Handler)
 
-ABDH is an educational management system designed to help teachers manage student data, create educational content, and track academic progress.
+ABDH is an educational management system designed to help teachers manage student data, create educational content, and track academic progress.(ABDH also refers to my name).
 
 ## Project Structure
 
