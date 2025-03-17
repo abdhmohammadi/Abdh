@@ -1,6 +1,6 @@
 ## Teacher Assistant project
 ## PySydeAbdhUI
-Author: Abdhmohammady@gmail.com
+Author: abdhmohammady@gmail.com
 ## Project Structure
   
 ```
